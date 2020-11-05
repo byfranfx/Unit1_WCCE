@@ -48,5 +48,33 @@ namespace Unit1_WCCE
             if (listBox.SelectedIndex == 1) messagesTextBox.Text += "ListBox selected item has changed to: 1" + "\r\n";
             if (listBox.SelectedIndex == 2) messagesTextBox.Text += "ListBox selected item has changed to: 2" + "\r\n";
         }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            messagesTextBox.Text += "TextBox has lost the focus." + "\r\n";
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            messagesTextBox.Text += "TextBox has got the focus." + "\r\n";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            String values = textBox1.Text;
+            String valuesLast = Convert.ToString(values[values.Length - 1]);
+                        
+            messagesTextBox.Text += "The key '" + valuesLast + "' has been clicked and released. " + "\r\n";
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            messagesTextBox.Text += "The mouse pointer is inside the image." + "\r\n";
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            messagesTextBox.Text += "The mouse pointer is outside the image." + "\r\n";
+        }
     }
 }
